@@ -1,6 +1,5 @@
 :root {
   --sun-color: radial-gradient(circle at center, white, #fceca4);
-  --moon-color: black;
   overflow: hidden;
 }
 
@@ -11,7 +10,6 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
 }
 
 .container {
@@ -28,7 +26,6 @@ body {
   right: 50%;
   transform: translate(50%, -50%);
   border-radius: 50%;
-  background-image: radial-gradient(circle at center, white, black 70%);
 }
 
 .sun {
@@ -49,7 +46,15 @@ body {
   height: 305px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background-color: var(--moon-color);
   cursor: pointer;
   z-index: 1000;
+}
+
+.counter {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
 }
