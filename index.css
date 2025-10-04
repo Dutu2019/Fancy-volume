@@ -1,5 +1,6 @@
 :root {
   --sun-color: radial-gradient(circle at center, white, #fceca4);
+  --moon-color: black;
   overflow: hidden;
 }
 
@@ -39,4 +40,16 @@ body {
   transform: translate(50%, -50%);
   border-radius: 50%;
   background-image: var(--sun-color);
+  user-select: none;
+}
+
+.moon {
+  position: absolute;
+  width: 305px;
+  height: 305px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: var(--moon-color);
+  cursor: pointer;
+  z-index: 1000;
 }
