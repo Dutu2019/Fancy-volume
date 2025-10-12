@@ -24,6 +24,15 @@ const BG_COLOR_END_RGB = hexToRgb(BG_COLOR_END);
 const MOON_COLOR_END_RGB = hexToRgb(MOON_COLOR_END);
 
 function init() {
+  VIEWPORT_WIDTH = Math.max(
+    document.documentElement.clientWidth || 0,
+    window.innerWidth || 0
+  );
+  VIEWPORT_HEIGHT = Math.max(
+    document.documentElement.clientHeight || 0,
+    window.innerHeight || 0
+  );
+
   setMoonCoords(VIEWPORT_WIDTH / 2, VIEWPORT_HEIGHT / 2);
   container.style.backgroundColor = BG_COLOR_END;
   moon.style.backgroundColor = MOON_COLOR_END;
@@ -105,11 +114,6 @@ function moonListener(ev) {
   }
 }
 
-moon.addEventListener("mousedown", moonListener);
-moon.addEventListener("mousemove", moonListener);
-
-init();
-
 // Helper funcs
 function mapRangeHex(value, fromMin, fromMax, toMin, toMax) {
   if (fromMin === fromMax) return toMin;
@@ -140,3 +144,9 @@ function hexToRgb(hex) {
 
   return [r, g, b];
 }
+
+moon.addEventListener("mousedown", moonListener);
+moon.addEventListener("mousemove", moonListener);
+window.addEventListener("resize", init);
+
+init();

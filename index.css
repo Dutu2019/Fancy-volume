@@ -13,7 +13,8 @@ body {
 }
 
 .container {
-  position: inherit;
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
 }
@@ -26,6 +27,7 @@ body {
   right: 50%;
   transform: translate(50%, -50%);
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .sun {
@@ -47,7 +49,7 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .counter {
@@ -57,4 +59,5 @@ body {
   transform: translate(-50%, -50%);
   font-size: 3em;
   color: white;
+  z-index: 1000;
 }
